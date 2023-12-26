@@ -3,6 +3,7 @@ import pickle as pickle
 import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
+from streamlit_extras.stylable_container import stylable_container
 
 def get_clean_data():
     data = pd.read_csv("data/data.csv")
@@ -176,7 +177,18 @@ def main():
         chart = get_radar_chart(input)
         st.plotly_chart(chart)
     with col2:
-        add_predictions(input)
+        with stylable_container(
+            key="predict", 
+            css_styles=[
+    """{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: #7E99AB;
+    }
+    """
+            ]
+        ):
+            add_predictions(input)
         
     
 

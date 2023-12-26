@@ -95,8 +95,15 @@ def add_predictions(input_data):
   
   st.write("Probability of being benign: ", model.predict_proba(input_array_scaled)[0][0])
   st.write("Probability of being malicious: ", model.predict_proba(input_array_scaled)[0][1])
-  
-  st.write("This app can assist medical professionals in making a diagnosis, but should not be used as a substitute for a professional diagnosis.")
+  with stylable_container(
+            key="description", 
+            css_styles=[
+    """{
+        padding: 0.2rem;
+    }
+    """
+            ]
+        ): st.write("This app can assist medical professionals in making a diagnosis, but should not be used as a substitute for a professional diagnosis")
 
 
 
@@ -172,7 +179,7 @@ def main():
         st.title("Breast Cancer Predictor")
         st.write("Please connect this app to your cytology lab to help diagnose breast cancer form your tissue sample. This app predicts using a machine learning model whether a breast mass is benign or malignant based on the measurements it receives from your cytosis lab. You can also update the measurements by hand using the sliders in the sidebar. ")
           
-    col1, col2 = st.columns([4, 1])
+    col1, col2 = st.columns([3, 1])
     with col1:
         chart = get_radar_chart(input)
         st.plotly_chart(chart)

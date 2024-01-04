@@ -22,7 +22,7 @@ Cancer Predictor ML is a machine learning project that aims to predict the likel
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/cancer-predictor-ml.git
+   git clone https://github.com/your-username/Cancer-predictor-ml.git
    ```
 
 2. Install the required dependencies:
@@ -30,15 +30,11 @@ Cancer Predictor ML is a machine learning project that aims to predict the likel
    pip install -r requirements.txt
    ```
 
-3. Run the respective applications:
-   - Breast Cancer Predictor:
-     ```bash
-     python breast_cancer_predictor.py
-     ```
-   - Diabetes Predictor:
-     ```bash
-     python diabetes_predictor.py
-     ```
+3. Run the respective applications using Streamlit::
+  ```bash
+   streamlit run app/main.py 
+  ```
+    
 
 4. Open your browser and visit the provided local URL to interact with the application and view the predictions.
 
